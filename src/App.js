@@ -35,9 +35,38 @@ const sections = {
     projects: {
         title: "PROJECTS",
         content: (
-            <div>
-                <strong>IMAGE-BASED FRAUDULENT CURRENCY DETECTION</strong>
-                <p>Developed a machine learning-driven solution to combat counterfeit currency proliferation.</p>
+            <div className="project-container">
+                <div className="project-item">
+                    <h3>IMAGE-BASED FRAUDULENT CURRENCY DETECTION</h3>
+                    
+                    <div className="project-section">
+                        <h4>Abstract</h4>
+                        <p>Developed a machine learning-driven solution to combat counterfeit currency proliferation, addressing
+                        economic implications. Utilized OpenCV, TensorFlow, and MATLAB for robust image processing
+                        implementation.</p>
+                    </div>
+
+                    <div className="project-section">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Contributed to developing a counterfeit currency detection system</li>
+                            <li>Assisted in testing and optimization processes</li>
+                            <li>Collaborated with team members to enhance edge detection methods</li>
+                            <li>Documented project progress and findings for review</li>
+                            <li>Demonstrated eagerness to learn and adapt</li>
+                        </ul>
+                    </div>
+
+                    <div className="project-section">
+                        <h4>Technologies Used</h4>
+                        <div className="tech-stack">
+                            <span className="tech-tag">OpenCV</span>
+                            <span className="tech-tag">TensorFlow</span>
+                            <span className="tech-tag">MATLAB</span>
+                            <span className="tech-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     },
@@ -57,15 +86,6 @@ const sections = {
             <ul>
                 <li>Honor Award for Academic Excellence, GATES Institute of Technology</li>
                 <li>Gold Medalist in Volleyball, College Championship Winner</li>
-            </ul>
-        )
-    },
-    onlineProfiles: {
-        title: "ONLINE PROFILES",
-        content: (
-            <ul>
-                <li>LinkedIn: <a href="https://linkedin.com/in/maniar-roshan7">linkedin.com/in/maniar-roshan7</a></li>
-                <li>GitHub: <a href="https://github.com/ManiarRoshan">github.com/ManiarRoshan</a></li>
             </ul>
         )
     }
@@ -89,13 +109,8 @@ function App() {
             <header className="hero">
                 <div className="hero-content">
                     <h1>Hi, I am Maniar Roshan</h1>
-                    <h2>Full Stack Developer / UI Designer</h2>
+                    <h2>Python Full Stack Developer</h2>
                     <p>Aspiring developer skilled in Python, Angular, and web development frameworks.</p>
-                    <div className="social-icons">
-                        <a href="mailto:maniarroshan7@gmail.com">✉️</a>
-                        <a href="https://github.com/ManiarRoshan">🐱</a>
-                        <a href="https://linkedin.com/in/maniar-roshan7">🔗</a>
-                    </div>
                     <button className="contact-button" onClick={handleViewWork}>View My Work</button>
                 </div>
             </header>
@@ -104,11 +119,9 @@ function App() {
                 <nav className="nav-bar">
                     <ul>
                         {Object.keys(sections).map((key) => (
-                            key !== 'declaration' && (
-                                <li key={key}>
-                                    <button onClick={() => handleNavigation(key)}>{sections[key].title}</button>
-                                </li>
-                            )
+                            <li key={key}>
+                                <button onClick={() => handleNavigation(key)}>{sections[key].title}</button>
+                            </li>
                         ))}
                     </ul>
                 </nav>
@@ -116,12 +129,19 @@ function App() {
 
             <section className="details-section">
                 <h2>{sections[activeSection].title}</h2>
-                <p>{sections[activeSection].content}</p>
+                <div className="section-content">{sections[activeSection].content}</div>
             </section>
 
             <footer className="footer">
-                <h3>DECLARATION</h3>
-                <p>I affirm that the information provided above is accurate and complete to the best of my knowledge.</p>
+                <h3>Connect with Me</h3>
+                <div className="social-links">
+                    <a href="https://github.com/ManiarRoshan" target="_blank" rel="noopener noreferrer" className="social-icon">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" />
+                    </a>
+                    <a href="https://linkedin.com/in/maniar-roshan7" target="_blank" rel="noopener noreferrer" className="social-icon">
+                        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" />
+                    </a>
+                </div>
             </footer>
         </div>
     );
