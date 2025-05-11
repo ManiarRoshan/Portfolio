@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 const sections = {
     summary: {
         title: "SUMMARY",
-        content: "Aspiring Full Stack Developer skilled in Python, Angular, and web development frameworks. Experienced in creating scalable applications and working on AI-based projects."
+        content: "Enthusiastic Full Stack Developer with hands-on experience in Python, Django, Angular, and MySQL.Built and deployed real-world projects using both frontend and backend technologies.Skilled in version control,responsive design, and team collaboration. Quick learner, adaptable, and eager to contribute to dynamic development teams."
     },
     education: {
         title: "EDUCATION",
@@ -30,6 +30,7 @@ const sections = {
                 <li>Quick Learner</li>
                 <li>Adaptability and Flexibility</li>
                 <li>Continuous Learning</li>
+                <li>Team Collaboration</li>
                 <li>Languages: English, Hindi, Telugu</li>
             </ul>
         )
@@ -223,10 +224,12 @@ function App() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        }
 
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -272,12 +275,8 @@ function App() {
                         </div>
                         <div className="hero-stats">
                             <div className="stat-item">
-                                <span className="stat-number">+10</span>
+                                <span className="stat-number">+7</span>
                                 <span className="stat-label">Projects</span>
-                            </div>
-                            <div className="stat-item">
-                                <span className="stat-number">2+</span>
-                                <span className="stat-label">Years Experience</span>
                             </div>
                             <div className="stat-item">
                                 <span className="stat-number">100%</span>
@@ -323,7 +322,7 @@ function App() {
                             <h3>Contact Me</h3>
                             <div className="contact-info">
                                 <p>Email: maniarroshan7@gmail.com</p>
-                                <p>Phone: +91 8143153474</p>
+                                <p>Phone: +91-8143153474</p>
                             </div>
                         </div>
                         <div className="footer-section">

@@ -11,6 +11,19 @@
     --gradient-accent: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
 }
 
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #10b981;
+    --accent-color: #f59e0b;
+    --text-color: #FFFFFF;
+    --bg-dark: #0f172a;
+    --bg-medium: #1e293b;
+    --bg-light: rgba(255, 255, 255, 0.08);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-accent: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -77,6 +90,7 @@ body {
     margin-bottom: 0.5em;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
     letter-spacing: -1px;
@@ -86,6 +100,7 @@ body {
 .name-highlight {
     background: var(--gradient-accent);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
