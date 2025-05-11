@@ -191,7 +191,27 @@ const sections = {
         title: "CONTACT ME",
         content: (
             <div className="contact-container">
-
+                <div className="contact-form">
+                    <form className="contact-form-inner">
+                        <div className="form-group">
+                            <label htmlFor="name">Name</label>
+                            <input type="text" id="name" name="name" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" className="submit-button">Send Message</button>
+                    </form>
+                </div>
             </div>
         )
     }
@@ -250,6 +270,20 @@ function App() {
                         <div className="hero-buttons">
                             <button className="contact-button" onClick={handleViewWork}>View My Work</button>
                         </div>
+                        <div className="hero-stats">
+                            <div className="stat-item">
+                                <span className="stat-number">+10</span>
+                                <span className="stat-label">Projects</span>
+                            </div>
+                            <div className="stat-item">
+                                <span className="stat-number">2+</span>
+                                <span className="stat-label">Years Experience</span>
+                            </div>
+                            <div className="stat-item">
+                                <span className="stat-number">100%</span>
+                                <span className="stat-label">Satisfaction</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -277,7 +311,7 @@ function App() {
 
             <section className="details-section" id={activeSection.toLowerCase()}>
                 <h2>{sections[activeSection].title}</h2>
-                <div>
+                <div className="section-content" style={{ opacity: activeSection === Object.keys(sections).find(key => key.toLowerCase() === window.location.hash.substring(1)) ? '1' : '0.8' }}>
                     {sections[activeSection].content}
                 </div>
             </section>
